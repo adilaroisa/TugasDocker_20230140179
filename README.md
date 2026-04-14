@@ -17,3 +17,19 @@
 
 ## Halaman home setelah input
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/da2d83f0-eeea-46da-867b-bc81f52dd164" />
+
+
+# 4. Halaman web teman yang di pull 4 screenshot
+
+## Halaman login
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3f67063c-2923-40cf-ade2-6c741003952b" />
+
+## Halaman home
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a969f7e3-639c-4254-a74c-165e8a1fbd57" />
+
+## Halaman form
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed75d501-4c55-4f73-9ae7-0f83493a8829" />
+
+## Halaman home setelah input
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a79bb78b-8edd-436a-87b2-8b8c956e47ee" />
+

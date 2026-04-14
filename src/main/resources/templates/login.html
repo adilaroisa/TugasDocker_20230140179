@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tugas Pertemuan 6</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f9ff; /* Background biru sangat muda */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 16px; /* Lebih rounded biar soft */
+            box-shadow: 0 10px 25px rgba(135, 206, 235, 0.1); /* Shadow kebiruan lembut */
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            border: 1px solid #e0f2fe; /* Border tipis pastel */
+        }
+        .login-container h2 {
+            color: #7dd3fc; /* Judul Biru Pastel */
+            margin-bottom: 30px;
+            font-weight: 600;
+            margin-top: 0;
+            letter-spacing: -0.5px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #64748b; /* Warna teks label netral */
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            background-color: #f8fafc;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: #bae6fd; /* Border focus biru pastel */
+            box-shadow: 0 0 0 4px rgba(186, 230, 253, 0.3); /* Glow focus lembut */
+            background-color: white;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #87ceeb; /* Sky Blue Pastel Utama */
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            box-shadow: 0 4px 6px rgba(135, 206, 235, 0.2);
+        }
+        .login-btn:hover {
+            background-color: #7dd3fc; /* Sedikit lebih terang saat hover */
+            transform: translateY(-1px); /* Efek angkat dikit */
+            box-shadow: 0 6px 8px rgba(135, 206, 235, 0.3);
+        }
+        .login-btn:active {
+            transform: translateY(1px);
+        }
+        .error-message {
+            color: #0c4a6e; /* Teks gelap biru */
+            background-color: #e0f2fe; /* Background biru pastel muda */
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            border: 1px solid #bae6fd;
+            font-weight: 500;
+        }
+        ::placeholder {
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Welcome Back!</h2>
+
+    <div th:if="${error}" class="error-message">
+        <span th:text="${error}"></span>
+    </div>
+
+    <form action="/login" method="post">
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Masukkan username admin" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Masukkan NIM kamu" required>
+        </div>
+        <button type="submit" class="login-btn">Login</button>
+    </form>
+</div>
+
+</body>
+</html>

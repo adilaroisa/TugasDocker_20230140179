@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background-color: #f0f9ff; /* Background biru sangat muda */
+            color: #334155;
+        }
+        h1, h2, h3 {
+            color: #38bdf8; /* Teks Biru Pastel agak terang untuk judul */
+            font-weight: 600;
+        }
+        .btn {
+            background-color: #87ceeb; /* Sky Blue Pastel */
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(135, 206, 235, 0.2);
+        }
+        .btn:hover {
+            background-color: #7dd3fc;
+            transform: translateY(-1px);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(135, 206, 235, 0.1);
+        }
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #e0f2fe;
+            text-align: left;
+        }
+        th {
+            background-color: #87ceeb; /* Header tabel Biru Pastel */
+            color: white;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f8fafc;
+        }
+        .btn-logout {
+            background-color: #fca5a5 !important; /* Merah pastel untuk logout */
+            box-shadow: 0 4px 6px rgba(252, 165, 165, 0.2);
+        }
+        .btn-logout:hover {
+            background-color: #f87171 !important;
+        }
+    </style>
+</head>
+<body>
+
+<h1>MY Website Adila Roisa Santosa - 20231040179</h1>
+<h2>Selamat datang di aplikasi!</h2>
+
+<a href="/form" class="btn" style="margin-bottom: 20px; display: inline-block;">Input Data Mahasiswa</a>
+<br><br>
+
+<h3>Data Mahasiswa</h3>
+<table>
+    <thead>
+    <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>NIM</th>
+        <th>Jenis Kelamin</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${#lists.isEmpty(users)}">
+        <td colspan="4" style="text-align: center; color: #94a3b8;">Belum ada data</td>
+    </tr>
+    <tr th:each="user, stat : ${users}">
+        <td th:text="${stat.count}"></td>
+        <td th:text="${user.nama}"></td>
+        <td th:text="${user.nim}"></td>
+        <td th:text="${user.jenisKelamin}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<br><br>
+<a href="/" class="btn btn-logout">Logout</a>
+
+</body>
+</html>

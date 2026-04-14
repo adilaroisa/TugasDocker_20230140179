@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Input Mahasiswa</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f9ff; /* Background biru sangat muda */
+            padding: 40px;
+        }
+        .form-box {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 10px 25px rgba(135, 206, 235, 0.1);
+            border: 1px solid #e0f2fe;
+        }
+        h2 {
+            color: #7dd3fc; /* Judul Biru Pastel */
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 15px;
+            color: #64748b;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            box-sizing: border-box;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            transition: all 0.3s;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #bae6fd;
+            box-shadow: 0 0 0 4px rgba(186, 230, 253, 0.3);
+            background-color: white;
+        }
+        .radio-group {
+            margin-top: 10px;
+            color: #475569;
+        }
+        .btn-submit {
+            background-color: #87ceeb; /* Sky Blue Pastel Utama */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 15px;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(135, 206, 235, 0.2);
+        }
+        .btn-submit:hover {
+            background-color: #7dd3fc;
+            transform: translateY(-1px);
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #94a3b8;
+            text-decoration: none;
+            text-align: center;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .back-link:hover {
+            color: #38bdf8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-box">
+    <h2>Form Input Mahasiswa</h2>
+
+    <form action="/form" method="post">
+        <label>Nama:</label>
+        <input type="text" name="nama" placeholder="Masukkan nama mahasiswa" required>
+
+        <label>NIM:</label>
+        <input type="text" name="nim" placeholder="Masukkan NIM" required>
+
+        <label>Jenis Kelamin:</label>
+        <div class="radio-group">
+            <input type="radio" id="laki" name="jenisKelamin" value="Laki-laki" required>
+            <label for="laki" style="display:inline; font-weight:normal; cursor: pointer;">Laki-laki</label><br>
+
+            <input type="radio" id="perempuan" name="jenisKelamin" value="Perempuan" required style="margin-top: 10px;">
+            <label for="perempuan" style="display:inline; font-weight:normal; cursor: pointer;">Perempuan</label>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit</button>
+    </form>
+
+    <a href="/home" class="back-link">Kembali ke Home</a>
+</div>
+
+</body>
+</html>
